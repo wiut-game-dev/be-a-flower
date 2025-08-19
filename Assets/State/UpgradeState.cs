@@ -1,0 +1,106 @@
+using System.Collections.Generic;
+using System.Linq;
+
+using UnityEngine;
+
+public class UpgradeState : ScriptableObject
+{
+	public List<Upgrade> AvailableStem = new();
+	public List<Upgrade> AvailableLeaves = new();
+	public List<Upgrade> AvailableRoot = new();
+	public List<Upgrade> AvailableFlowers = new();
+
+	public HashSet<string> Unlocked = new();
+
+	private void ApplyBaseChange(GeneralState state, (BaseVariable variable, float value) mod)
+	{
+		switch(mod.variable)
+		{
+			case BaseVariable.BaseNutrientConsumption:
+				state.BaseNutrientConsumption += mod.value;
+				break;
+			case BaseVariable.BaseWaterSupply:
+				state.BaseWaterSupply += mod.value;
+				break;
+			case BaseVariable.BaseSunSupply:
+				state.BaseSunSupply += mod.value;
+				break;
+			case BaseVariable.BaseWaterStorage:
+				state.BaseWaterStorage += mod.value;
+				break;
+			case BaseVariable.BaseNutrientStorage:
+				state.BaseNutrientStorage += mod.value;
+				break;
+			case BaseVariable.FlowerCount:
+				state.FlowerCount += (int)mod.value;
+				break;
+			case BaseVariable.LeafCount:
+				state.LeafCount += (int)mod.value;
+				break;
+			case BaseVariable.LeafPrimaryPhase:
+				state.LeafPrimaryPhase += (int)mod.value;
+				break;
+			case BaseVariable.LeafSecondaryPhase:
+				state.LeafSecondaryPhase += (int)mod.value;
+				break;
+			case BaseVariable.RootPrimaryPhase:
+				state.RootPrimaryPhase += (int)mod.value;
+				break;
+			case BaseVariable.RootSecondaryPhase:
+				state.RootSecondaryPhase += (int)mod.value;
+				break;
+			case BaseVariable.StemPrimaryPhase:
+				state.StemPrimaryPhase += (int)mod.value;
+				break;
+			case BaseVariable.StemSecondaryPhase:
+				state.StemSecondaryPhase += (int)mod.value;
+				break;
+		}
+	}
+
+	private void ApplyShareChange(GeneralState state, (ShareVariable variable, float value) mod)
+	{
+		state.Modificators.Add(new(mod.variable, mod.value));
+	}
+
+	public Upgrade Next(Aspect aspect) => aspect switch
+	{
+		Aspect.Stem => AvailableStem[0],
+		Aspect.Leaves => AvailableLeaves[0],
+		Aspect.Root => AvailableRoot[0],
+		Aspect.Flowers => AvailableFlowers[0],
+		_ => null
+	};
+
+	public bool UpgradeNext(GeneralState state, Aspect aspect) => Upgrade(state, Next(aspect));
+
+	private bool Upgrade(GeneralState state, Upgrade upg)
+	{
+		if(state.NutrientLevel < upg.Cost)
+			return false;
+		if(upg.RequiredUpgrades.Any(x => !Unlocked.Contains(x)))
+			return false;
+		if(upg.NotAllowedUpgrades.Any(x => Unlocked.Contains(x)))
+			return false;
+		state.NutrientLevel -= upg.Cost;
+		Unlocked.Add(upg.Codename);
+		AvailableStem.Remove(upg);
+		foreach(var mod in upg.BaseChanges)
+		{
+			ApplyBaseChange(state, mod);
+		}
+		foreach(var mod in upg.ShareChanges)
+		{
+			ApplyShareChange(state, mod);
+		}
+		return true;
+	}
+}
+
+public enum Aspect
+{
+	Stem,
+	Leaves,
+	Root,
+	Flowers
+}
