@@ -7,12 +7,14 @@ using UnityEngine;
 
 public class GeneralState : ScriptableObject
 {
+	public bool Alive;
 	//storage and supply of water
 	//base is how much plant itself gives, and then it is multiplied by modificators
 	public float BaseWaterSupply = 1f;
 	public float WaterSupply;
 	public float BaseWaterStorage = 10f;
 	public float WaterStorage;
+	public float WaterLevel;
 
 	//same thing with sun
 	public float BaseSunSupply = 1f;
@@ -21,6 +23,7 @@ public class GeneralState : ScriptableObject
 	//same with nutrients
 	public float BaseNutrientStorage = 10f;
 	public float NutrientStorage;
+	public float NutrientLevel;
 	public float BaseNutrientConsumption = 1f;
 	public float NutrientConsumption;
 

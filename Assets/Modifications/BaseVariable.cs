@@ -3,8 +3,10 @@
 public enum BaseVariable
 {
 	BaseWaterSupply,
+	BaseWaterStorage,
 	BaseSunSupply,
 	BaseNutrientConsumption,
+	BaseNutrientStorage,
 	LeafCount,
 	FlowerCount,
 	LeafPrimaryPhase,

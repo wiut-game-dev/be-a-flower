@@ -13,19 +13,21 @@ public class StateUpdate : MonoBehaviour
 
 	public void AccumulateWater()
 	{
-		State.WaterStorage += State.WaterSupply * Time.deltaTime;
+		State.WaterLevel += State.WaterSupply * Time.deltaTime;
+		State.WaterLevel = Math.Min(State.WaterStorage, State.WaterLevel);
 	}
 
 	public void ConsumeNutrients()
 	{
-		State.NutrientStorage -= State.NutrientConsumption * Time.deltaTime;
+		State.NutrientLevel -= State.NutrientConsumption * Time.deltaTime;
 	}
 
 	public void AccumulateNutrients()
 	{
 		//Math.Min to not go into negative
-		State.NutrientStorage += Math.Min(State.WaterStorage, State.SunSupply) * Time.deltaTime;
-		State.WaterStorage -= Math.Min(State.WaterStorage, State.SunSupply) * Time.deltaTime;
+		State.NutrientLevel += Math.Min(State.WaterStorage, State.SunSupply) * Time.deltaTime;
+		State.NutrientLevel = Math.Min(State.NutrientStorage, State.NutrientLevel);
+		State.WaterLevel -= Math.Min(State.WaterStorage, State.SunSupply) * Time.deltaTime;
 	}
 
 	public void ApplyModificators(float timePassed)
@@ -60,11 +62,18 @@ public class StateUpdate : MonoBehaviour
 		State.NutrientConsumption = State.BaseNutrientConsumption * nutrientModifier;
 	}
 
+	public void CheckWater()
+	{
+		if(State.WaterLevel / State.WaterStorage < 0.1f)
+			State.Alive = false;
+	}
+
 	private void Update()
 	{
 		AccumulateNutrients();
 		ConsumeNutrients();
 		AccumulateWater();
+		CheckWater();
 	}
 
 	private void FixedUpdate()
