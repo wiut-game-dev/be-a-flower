@@ -5,5 +5,7 @@ public enum ShareVariable
 	WaterSupply,
 	SunSupply,
 	NutrientConsumption,
+	WaterStorage,
+	NutrientStorage
 }
 

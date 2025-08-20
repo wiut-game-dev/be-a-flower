@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b01f970a2564ac459ffd5660b93e8eb, type: 3}
+  m_Name: General
+  m_EditorClassIdentifier: 
+  Alive: 0
+  BaseWaterSupply: 0
+  WaterSupply: 0
+  BaseWaterStorage: 10000
+  WaterStorage: 10000
+  WaterLevel: 0.000000199967
+  BaseSunSupply: 5
+  SunSupply: 5
+  BaseNutrientStorage: 10000
+  NutrientStorage: 10000
+  NutrientLevel: 155.10669
+  BaseNutrientConsumption: 0
+  NutrientConsumption: 0
+  SunStrength: 0
+  WindStrength: 0
+  RainStrength: 0
+  LeafCount: 0
+  FlowerCount: 0
+  LeafPrimaryPhase: 0
+  LeafSecondaryPhase: 0
+  StemPrimaryPhase: 0
+  StemSecondaryPhase: 0
+  RootPrimaryPhase: 0
+  RootSecondaryPhase: 0
+  Pollution: 0
