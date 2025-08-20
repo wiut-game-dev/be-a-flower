@@ -72,10 +72,14 @@ public class StateUpdate : MonoBehaviour
 		State.WaterStorage = State.BaseWaterStorage * waterStorageModifier;
 	}
 
-	public void CheckWater()
+	public void CheckLiveness()
 	{
 		if(State.WaterLevel / State.WaterStorage < 0.1f)
 			State.Alive = false;
+		if(State.NutrientLevel < 0.1f)
+			State.Alive = false;
+		if(!State.Alive)
+			Destroy(gameObject);
 	}
 
 	private void Update()
@@ -83,14 +87,14 @@ public class StateUpdate : MonoBehaviour
 		AccumulateNutrients();
 		ConsumeNutrients();
 		AccumulateWater();
-		CheckWater();
+		CheckLiveness();
 	}
 
 	private void FixedUpdate()
 	{
 		ApplyModificators(Time.fixedDeltaTime);
 
-		WaterStorage.text = State.WaterLevel.ToString("F");
-		NutrientStorage.text = State.NutrientLevel.ToString("F");
+		WaterStorage.text = State.WaterLevel.ToString("F") + "w";
+		NutrientStorage.text = State.NutrientLevel.ToString("F") + "n";
 	}
 }
