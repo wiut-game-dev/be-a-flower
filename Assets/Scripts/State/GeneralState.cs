@@ -4,7 +4,7 @@ using UnityEngine;
 
 //class which contains all variables, representing current state of the game
 //class will be certainly extended in future
-
+[CreateAssetMenu]
 public class GeneralState : ScriptableObject
 {
 	public bool Alive;

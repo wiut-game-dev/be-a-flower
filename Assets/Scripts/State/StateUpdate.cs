@@ -8,8 +8,8 @@ public class StateUpdate : MonoBehaviour
 {
 	public GeneralState State;
 
-	public TextMeshPro WaterStorage;
-	public TextMeshPro NutrientStorage;
+	public TMP_Text WaterStorage;
+	public TMP_Text NutrientStorage;
 
 	public void AccumulateWater()
 	{
@@ -25,27 +25,35 @@ public class StateUpdate : MonoBehaviour
 	public void AccumulateNutrients()
 	{
 		//Math.Min to not go into negative
-		State.NutrientLevel += Math.Min(State.WaterStorage, State.SunSupply) * Time.deltaTime;
+		State.NutrientLevel += Math.Min(State.WaterLevel, State.SunSupply) * Time.deltaTime;
 		State.NutrientLevel = Math.Min(State.NutrientStorage, State.NutrientLevel);
-		State.WaterLevel -= Math.Min(State.WaterStorage, State.SunSupply) * Time.deltaTime;
+		State.WaterLevel -= Math.Min(State.WaterLevel, State.SunSupply) * Time.deltaTime;
 	}
 
 	public void ApplyModificators(float timePassed)
 	{
-		float waterModifier = 1f, sunModifier = 1f, nutrientModifier = 1f;
+		float waterSupplyModifier = 1f, sunSupplyModifier = 1f, nutrientSupplyModifier = 1f;
+		float waterStorageModifier = 1f, nutrientStorageModifier = 1f;
 		foreach(var modificator in State.Modificators)//scan through all modificators
 		{
 			switch(modificator.Variable)//determine variable and add up all multipliers
 			{
 				case ShareVariable.WaterSupply:
-					waterModifier += modificator.Value;
+					waterSupplyModifier += modificator.Value;
 					break;
 				case ShareVariable.SunSupply:
-					sunModifier += modificator.Value;
+					sunSupplyModifier += modificator.Value;
 					break;
 				case ShareVariable.NutrientConsumption:
-					nutrientModifier += modificator.Value;
+					nutrientSupplyModifier += modificator.Value;
 					break;
+				case ShareVariable.NutrientStorage:
+					nutrientStorageModifier += modificator.Value;
+					break;
+				case ShareVariable.WaterStorage:
+					waterStorageModifier += modificator.Value;
+					break;
+
 			}
 			if(modificator.Duration is not null)//decrease duration
 			{
@@ -57,9 +65,11 @@ public class StateUpdate : MonoBehaviour
 			}
 		}
 		//apply summed multipliers
-		State.WaterSupply = State.BaseWaterSupply * waterModifier;
-		State.SunSupply = State.BaseSunSupply * sunModifier;
-		State.NutrientConsumption = State.BaseNutrientConsumption * nutrientModifier;
+		State.WaterSupply = State.BaseWaterSupply * waterSupplyModifier;
+		State.SunSupply = State.BaseSunSupply * sunSupplyModifier;
+		State.NutrientConsumption = State.BaseNutrientConsumption * nutrientSupplyModifier;
+		State.NutrientStorage = State.BaseNutrientStorage * nutrientStorageModifier;
+		State.WaterStorage = State.BaseWaterStorage * waterStorageModifier;
 	}
 
 	public void CheckWater()
@@ -80,7 +90,7 @@ public class StateUpdate : MonoBehaviour
 	{
 		ApplyModificators(Time.fixedDeltaTime);
 
-		WaterStorage.text = State.WaterStorage.ToString("F");
-		NutrientStorage.text = State.NutrientStorage.ToString("F");
+		WaterStorage.text = State.WaterLevel.ToString("F");
+		NutrientStorage.text = State.NutrientLevel.ToString("F");
 	}
 }
