@@ -41,6 +41,7 @@ public class GeneralState : ScriptableObject
 	public int StemSecondaryPhase;
 	public int RootPrimaryPhase;
 	public int RootSecondaryPhase;
+	public List<NodeType> Nodes = new List<NodeType>(); //where nodes will be contained
 
 	//this should represent chance of getting disease from pollution
 	public float Pollution;

@@ -13,6 +13,8 @@ public partial class UpgradeState : ScriptableObject
 	public List<Upgrade> AvailableRoot;
 	public List<Upgrade> AvailableFlowers;
 
+	public int stemUpgradesPerNode = 2; // how many upgrades must be unlocked per node
+
 	public HashSet<string> Unlocked = new();
 
 	public UpgradeState()
@@ -27,7 +29,11 @@ public partial class UpgradeState : ScriptableObject
 
 	private void ApplyBaseChange(GeneralState state, (BaseVariable variable, float value) mod)
 	{
-		switch(mod.variable)
+
+		int emptyNodeIndex = state.Nodes.IndexOf(NodeType.Empty); //for list filling
+
+
+		switch (mod.variable)
 		{
 			case BaseVariable.BaseNutrientConsumption:
 				state.BaseNutrientConsumption += mod.value;
@@ -68,6 +74,19 @@ public partial class UpgradeState : ScriptableObject
 			case BaseVariable.StemSecondaryPhase:
 				state.StemSecondaryPhase += (int)mod.value;
 				break;
+			case BaseVariable.NodeFillWithLeaf: // method for leaf filling
+				if (emptyNodeIndex != -1) // -1 means no empty node was found
+				{
+					state.Nodes[emptyNodeIndex] = NodeType.Leaf;
+				}
+				break;
+			case BaseVariable.NodeFillWithFlower: // method for flower filling
+				if (emptyNodeIndex != -1)
+				{
+					state.Nodes[emptyNodeIndex] = NodeType.Flower;
+				}
+				break;
+
 		}
 	}
 
@@ -111,6 +130,8 @@ public partial class UpgradeState : ScriptableObject
 			return false;
 		if(upg.NotAllowedUpgrades.Any(x => Unlocked.Contains(x)))
 			return false;
+		if (upg.ConsumesNodeSlot && state.Nodes.Count == 0)
+			return false; //no node slots available
 		state.NutrientLevel -= upg.Cost;
 		Unlocked.Add(upg.Codename);
 		AvailableStem.Remove(upg);
@@ -122,6 +143,13 @@ public partial class UpgradeState : ScriptableObject
 		{
 			ApplyShareChange(state, mod);
 		}
+
+		if (state.StemPrimaryPhase > 0 && state.StemPrimaryPhase % stemUpgradesPerNode == 0) //add empty node slot
+		{
+			state.Nodes.Add(NodeType.Empty);
+		}
+
+
 		return true;
 	}
 }

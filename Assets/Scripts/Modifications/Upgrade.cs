@@ -11,10 +11,12 @@ public class Upgrade
 	public string Name;
 	public string Description;
 
+	public bool ConsumesNodeSlot; //to check whether upgrade uses node slot
+
 	public List<string> RequiredUpgrades;
 	public List<string> NotAllowedUpgrades;
 
-	public Upgrade(float cost, string codename, string name, string description)
+	public Upgrade(float cost, string codename, string name, string description, bool consumesNodeSlot)
 	{
 		Cost = cost;
 		Codename = codename;
@@ -24,6 +26,7 @@ public class Upgrade
 		ShareChanges = new();
 		RequiredUpgrades = new();
 		NotAllowedUpgrades = new();
+		ConsumesNodeSlot = consumesNodeSlot;
 	}
 
 	public void AddChange(BaseVariable variable, float value) => BaseChanges.Add((variable, value));

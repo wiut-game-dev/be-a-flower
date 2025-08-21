@@ -14,6 +14,8 @@ public enum BaseVariable
 	StemPrimaryPhase,
 	StemSecondaryPhase,
 	RootPrimaryPhase,
-	RootSecondaryPhase
+	RootSecondaryPhase,
+	NodeFillWithLeaf, //node for leaf
+	NodeFillWithFlower //node for flower
 }
 
