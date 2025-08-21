@@ -46,5 +46,18 @@ public class GeneralState : ScriptableObject
 	public float Pollution;
 
 	public List<Modificator> Modificators = new();
+
+	public void SetInitial()
+	{
+		Alive = true;
+		BaseWaterSupply = 1f;
+		BaseWaterStorage = 10f;
+		BaseSunSupply = 0.5f;
+
+		BaseNutrientStorage = 10f;
+		NutrientLevel = 5f;
+		BaseNutrientConsumption = 0.1f;
+
+	}
 }
 

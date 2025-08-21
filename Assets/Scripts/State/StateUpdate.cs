@@ -90,6 +90,11 @@ public class StateUpdate : MonoBehaviour
 		CheckLiveness();
 	}
 
+	private void Start()
+	{
+		State.SetInitial();
+	}
+
 	private void FixedUpdate()
 	{
 		ApplyModificators(Time.fixedDeltaTime);

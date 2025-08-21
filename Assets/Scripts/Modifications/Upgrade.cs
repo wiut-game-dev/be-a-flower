@@ -20,10 +20,13 @@ public class Upgrade
 		Codename = codename;
 		Name = name;
 		Description = description;
+		BaseChanges = new();
+		ShareChanges = new();
+		RequiredUpgrades = new();
+		NotAllowedUpgrades = new();
 	}
 
 	public void AddChange(BaseVariable variable, float value) => BaseChanges.Add((variable, value));
 
 	public void AddChange(ShareVariable variable, float value) => ShareChanges.Add((variable, value));
 }
-

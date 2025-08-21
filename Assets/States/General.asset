@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b01f970a2564ac459ffd5660b93e8eb, type: 3}
   m_Name: General
   m_EditorClassIdentifier: 
-  Alive: 0
-  BaseWaterSupply: 0
-  WaterSupply: 0
-  BaseWaterStorage: 10000
-  WaterStorage: 10000
-  WaterLevel: 0.000000199967
-  BaseSunSupply: 5
-  SunSupply: 5
-  BaseNutrientStorage: 10000
-  NutrientStorage: 10000
-  NutrientLevel: 155.10669
-  BaseNutrientConsumption: 0
-  NutrientConsumption: 0
+  Alive: 1
+  BaseWaterSupply: 5
+  WaterSupply: 5
+  BaseWaterStorage: 20
+  WaterStorage: 20
+  WaterLevel: 20
+  BaseSunSupply: 0.5
+  SunSupply: 0.5
+  BaseNutrientStorage: 20
+  NutrientStorage: 20
+  NutrientLevel: 1.8508154
+  BaseNutrientConsumption: 0.1
+  NutrientConsumption: 0.1
   SunStrength: 0
   WindStrength: 0
   RainStrength: 0
