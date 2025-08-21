@@ -17,11 +17,12 @@ public partial class UpgradeState : ScriptableObject
 
 	public UpgradeState()
 	{
+		//initializing collections
 		AvailableStem = new();
 		AvailableLeaves = new();
 		AvailableRoot = new();
 		AvailableFlowers = new();
-		AddStem();
+		AddStem();//calling method to add all stem upgrades
 	}
 
 	private void ApplyBaseChange(GeneralState state, (BaseVariable variable, float value) mod)
@@ -77,6 +78,7 @@ public partial class UpgradeState : ScriptableObject
 
 	public Upgrade Next(Aspect aspect)
 	{
+		//retrieve next available upgrade, according to aspect
 		try
 		{
 			return aspect switch
@@ -90,14 +92,17 @@ public partial class UpgradeState : ScriptableObject
 		}
 		catch(ArgumentOutOfRangeException)
 		{
+			//if collection is empty, return null
 			return null;
 		}
 	}
 
+	//makes life easier. just give state and pick aspect to upgrade
 	public bool UpgradeNext(GeneralState state, Aspect aspect) => Upgrade(state, Next(aspect));
 
 	private bool Upgrade(GeneralState state, Upgrade upg)
 	{
+		//check if upgrade is not null and can be bought, then apply it to state
 		if(upg is null)
 			return false;
 		if(state.NutrientLevel < upg.Cost)
