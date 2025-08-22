@@ -144,7 +144,7 @@ public partial class UpgradeState : ScriptableObject
 			ApplyShareChange(state, mod);
 		}
 
-		if (state.StemPrimaryPhase > 0 && state.StemPrimaryPhase % stemUpgradesPerNode == 0) //add empty node slot
+		if (state.StemSecondaryPhase > 0 && state.StemSecondaryPhase % stemUpgradesPerNode == 0) //add empty node slot
 		{
 			state.Nodes.Add(NodeType.Empty);
 		}

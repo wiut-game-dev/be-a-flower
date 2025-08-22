@@ -1,11 +1,16 @@
 using TMPro;
-
 using UnityEngine;
+using System.Text;
+using System.Linq;
+using System.Collections.Generic;
+
 
 public class UpgradeShower : MonoBehaviour
 {
 	public TMP_Text Stem;
 	public TMP_Text Message;
+	public TMP_Text NodesFill; //displays nodes overall (the list)
+	public TMP_Text AvailableNodes; //for show how many nodes are available to fill
 
 	public UpgradeState upgradeState;
 	public GeneralState generalState;
@@ -14,6 +19,9 @@ public class UpgradeShower : MonoBehaviour
 	{
 		//firstly, show all possible upgrades of aspects
 		ShowAvailableStem();
+
+		ShowNodesStatus();
+
 	}
 
 	private void Update()
@@ -23,6 +31,19 @@ public class UpgradeShower : MonoBehaviour
 		{
 			Debug.Log("S up");//for debug purposes
 			UpgradeStem();
+		}
+
+		if (Input.GetKeyUp(KeyCode.W)) //Nodes update with Leaf
+		{
+			Debug.Log("W up"); //for debug purposes
+			UpgradeNode(Aspect.Leaves);
+
+		}
+
+		if (Input.GetKeyUp(KeyCode.F)) //Nodes update with Flower
+		{
+			Debug.Log("F up"); //for debug purposes
+			UpgradeNode(Aspect.Flowers);
 		}
 	}
 
@@ -48,4 +69,47 @@ public class UpgradeShower : MonoBehaviour
 			Message.text = "Can not upgrade";
 		}
 	}
+
+	//Node Upgrades:
+
+	public void ShowNodesStatus()
+	{
+		//shows available nodes that can be filled 
+		int availableCount = generalState.Nodes.Count(node => node == NodeType.Empty);
+		AvailableNodes.text = $"Available Nodes: {availableCount}";
+
+		//shows what nodes are filled with
+
+		StringBuilder nodeStatusBuilder = new StringBuilder();
+		nodeStatusBuilder.Append("Node Status: ");
+
+		if (generalState.Nodes.Count == 0)
+		{
+			nodeStatusBuilder.Append("[None]");
+		}
+		else
+		{
+			foreach (NodeType nodeType in generalState.Nodes)
+			{
+				nodeStatusBuilder.Append($"[{nodeType}] ");
+			}
+		}
+		NodesFill.text = nodeStatusBuilder.ToString();
+	}
+
+	public void UpgradeNode(Aspect aspect)
+	{
+		if (upgradeState.UpgradeNext(generalState, aspect))
+		{
+			Message.text = $"Successful {aspect} upgrade!";
+		}
+		else
+		{
+			Message.text = $"Cannot upgrade {aspect}. Check cost or node availability.";
+		}
+
+		ShowNodesStatus();
+	}
+
 }
+
