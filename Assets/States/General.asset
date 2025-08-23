@@ -17,12 +17,12 @@ MonoBehaviour:
   WaterSupply: 5
   BaseWaterStorage: 20
   WaterStorage: 20
-  WaterLevel: 19.551125
+  WaterLevel: 20
   BaseSunSupply: 0.5
   SunSupply: 0.5
   BaseNutrientStorage: 20
   NutrientStorage: 20
-  NutrientLevel: 0.58840704
+  NutrientLevel: 5.8065395
   BaseNutrientConsumption: 0.1
   NutrientConsumption: 0.1
   SunStrength: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
   LeafPrimaryPhase: 1
   LeafSecondaryPhase: 1
   StemPrimaryPhase: 1
-  StemSecondaryPhase: 1
+  StemSecondaryPhase: 2
   RootPrimaryPhase: 1
   RootSecondaryPhase: 3
   Pollution: 0
