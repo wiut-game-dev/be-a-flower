@@ -58,6 +58,14 @@ public class GeneralState : ScriptableObject
 		NutrientLevel = 5f;
 		BaseNutrientConsumption = 0.1f;
 
+		LeafCount = 0;
+		FlowerCount = 0;
+		LeafPrimaryPhase = 1;
+		LeafSecondaryPhase = 1;
+		StemPrimaryPhase = 1;
+		StemSecondaryPhase = 1;
+		RootPrimaryPhase = 1;
+		RootSecondaryPhase = 1;
 	}
 }
 
