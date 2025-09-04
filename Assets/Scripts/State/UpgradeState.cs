@@ -22,8 +22,10 @@ public partial class UpgradeState : ScriptableObject
 		AvailableLeaves = new();
 		AvailableRoot = new();
 		AvailableFlowers = new();
-		AddRoot();//calling method to add all stem upgrades
-	}
+		AddRoot();//calling method to add all stem upgrades <-- root or stem?
+		AddStem();//calling method to add all stem upgrades
+        AddLeaves();//calling method to add all leaf upgrades
+    }
 
 	private void ApplyBaseChange(GeneralState state, (BaseVariable variable, float value) mod)
 	{
