@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: f382f2f0b93f35c498fd76309b30f923
+guid: 642bf64a0faaad5419db136f7a53e623
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6937817954938267909
-    second: 2_0
+      213: 2908040303761999210
+    second: Common_Stipe_1A1_0
+  - first:
+      213: 157311933318277294
+    second: Common_Stipe_1A1_1
+  - first:
+      213: 3291708646504861965
+    second: Common_Stipe_1A1_2
+  - first:
+      213: 2840237207965256716
+    second: Common_Stipe_1A1_3
+  - first:
+      213: 8748075554426330963
+    second: Common_Stipe_1A1_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2_0
+      name: Common_Stipe_1A1_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 60
         y: 0
-        width: 226
-        height: 223
+        width: 8
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5092c600ca4184060800000000000000
-      internalID: 6937817954938267909
+      spriteID: a65c042bf3f6b5820800000000000000
+      internalID: 2908040303761999210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Common_Stipe_1A1_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 0
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea8ad50be52ee2200800000000000000
+      internalID: 157311933318277294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Common_Stipe_1A1_2
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d011103e29f7ead20800000000000000
+      internalID: 3291708646504861965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Common_Stipe_1A1_3
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 0
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ccd9241bc8a6720800000000000000
+      internalID: 2840237207965256716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Common_Stipe_1A1_4
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 0
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f1cd11e58676970800000000000000
+      internalID: 8748075554426330963
       vertices: []
       indices: 
       edges: []
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      2_0: 6937817954938267909
+      Common_Stipe_1A1_0: 2908040303761999210
+      Common_Stipe_1A1_1: 157311933318277294
+      Common_Stipe_1A1_2: 3291708646504861965
+      Common_Stipe_1A1_3: 2840237207965256716
+      Common_Stipe_1A1_4: 8748075554426330963
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
