@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: f382f2f0b93f35c498fd76309b30f923
+guid: 7df1b7fb2ee4146459ebc66e0e84226e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6937817954938267909
-    second: 2_0
+      213: 3813914114489272289
+    second: Long_Leaf_1A2_0
+  - first:
+      213: 8338582446342536401
+    second: Long_Leaf_1A2_1
+  - first:
+      213: 9198754906451195911
+    second: Long_Leaf_1A2_2
+  - first:
+      213: -676102464655604867
+    second: Long_Leaf_1A2_3
+  - first:
+      213: 7189671359951457313
+    second: Long_Leaf_1A2_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2_0
+      name: Long_Leaf_1A2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 226
-        height: 223
+        x: 27
+        y: 30
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5092c600ca4184060800000000000000
-      internalID: 6937817954938267909
+      spriteID: 1e74bfd1eaebde430800000000000000
+      internalID: 3813914114489272289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long_Leaf_1A2_1
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 30
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dcfd842e8898b370800000000000000
+      internalID: 8338582446342536401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long_Leaf_1A2_2
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 30
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708b7eea9da88af70800000000000000
+      internalID: 9198754906451195911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long_Leaf_1A2_3
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 30
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d73cf6af3600e96f0800000000000000
+      internalID: -676102464655604867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long_Leaf_1A2_4
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 30
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12cc4b56208d6c360800000000000000
+      internalID: 7189671359951457313
       vertices: []
       indices: 
       edges: []
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      2_0: 6937817954938267909
+      Long_Leaf_1A2_0: 3813914114489272289
+      Long_Leaf_1A2_1: 8338582446342536401
+      Long_Leaf_1A2_2: 9198754906451195911
+      Long_Leaf_1A2_3: -676102464655604867
+      Long_Leaf_1A2_4: 7189671359951457313
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

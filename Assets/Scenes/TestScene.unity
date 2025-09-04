@@ -453,7 +453,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -855298285791758126, guid: eba1d54c4ef0495419fc91adf632a794, type: 3}
+  m_Sprite: {fileID: 4348124518883641310, guid: 1cf5990e404b0b944ba1ef98de8ba1bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -996,14 +996,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1b72468de3af74ca8bf9c41f7feb24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  R1_1: {fileID: -855298285791758126, guid: eba1d54c4ef0495419fc91adf632a794, type: 3}
-  R1_2: {fileID: 6937817954938267909, guid: f382f2f0b93f35c498fd76309b30f923, type: 3}
-  R1_3: {fileID: -855298285791758126, guid: eba1d54c4ef0495419fc91adf632a794, type: 3}
-  R1_4: {fileID: 6937817954938267909, guid: f382f2f0b93f35c498fd76309b30f923, type: 3}
-  S1_1: {fileID: -855298285791758126, guid: eba1d54c4ef0495419fc91adf632a794, type: 3}
-  S1_2: {fileID: 6937817954938267909, guid: f382f2f0b93f35c498fd76309b30f923, type: 3}
-  S1_3: {fileID: -855298285791758126, guid: eba1d54c4ef0495419fc91adf632a794, type: 3}
-  S1_4: {fileID: 6937817954938267909, guid: f382f2f0b93f35c498fd76309b30f923, type: 3}
+  R1_1: {fileID: 4348124518883641310, guid: 1cf5990e404b0b944ba1ef98de8ba1bf, type: 3}
+  R1_2: {fileID: 1988739779897586506, guid: ec96ae43dd7a94248970851725a3db24, type: 3}
+  R1_3: {fileID: 7243312265184233618, guid: ec96ae43dd7a94248970851725a3db24, type: 3}
+  R1_4: {fileID: 4427230485127658001, guid: f36a9d6fcd7e08a4dba389101e714eb2, type: 3}
+  S1_1: {fileID: 2908040303761999210, guid: 642bf64a0faaad5419db136f7a53e623, type: 3}
+  S1_2: {fileID: 9072623975147432112, guid: 15587170acd645c4e971344749f482c6, type: 3}
+  S1_3: {fileID: 2734610990145892487, guid: d54bf298bab6b3e41bbb765b264f13a9, type: 3}
+  S1_4: {fileID: -3527393123592181491, guid: 44544fec42260294a856b59509c60f30, type: 3}
   Root: {fileID: 551179287}
   Stem: {fileID: 1253934533}
   GeneralState: {fileID: 11400000, guid: d39d2f74d9e90564ea36bf493c1beea4, type: 2}
@@ -1051,7 +1051,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -855298285791758126, guid: eba1d54c4ef0495419fc91adf632a794, type: 3}
+  m_Sprite: {fileID: 2908040303761999210, guid: 642bf64a0faaad5419db136f7a53e623, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
