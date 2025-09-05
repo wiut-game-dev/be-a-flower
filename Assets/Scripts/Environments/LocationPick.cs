@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LocationPick : MonoBehaviour
 {
+	public SpriteRenderer Background;
 	public GeneralState plantStats;
 	List<Inhabitat> environments = new List<Inhabitat>();
 
@@ -13,11 +14,17 @@ public class LocationPick : MonoBehaviour
 		return environments[index];
 	}
 
+	private void ApplyLocation(Inhabitat inh)
+	{
+		inh.SetVariables(plantStats);
+		Background.sprite = inh.Background;
+	}
+
 	private void Start()
 	{
 		environments.Add(new Wasteland());
 		environments.Add(new City());
 		var newLocation = PickLocation();
-		newLocation.SetVariables(plantStats);
+		ApplyLocation(newLocation);
 	}
 }

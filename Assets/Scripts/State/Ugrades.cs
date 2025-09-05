@@ -24,45 +24,45 @@ public partial class UpgradeState
     {
         AvailableStem.Add(new(5, "sm1", "Stem Upgrade", "Just better"));
         AvailableStem[0].AddChange(BaseVariable.BaseSunSupply, 0.5f);
-        AvailableRoot[0].AddChange(BaseVariable.BaseWaterStorage, 5);
+        AvailableStem[0].AddChange(BaseVariable.BaseWaterStorage, 5);
         AvailableStem[0].AddChange(BaseVariable.StemSecondaryPhase, 1);
 
         AvailableStem.Add(new(5, "sm2", "Stem Upgrade", "Just better"));
         AvailableStem[1].AddChange(BaseVariable.BaseSunSupply, 0.5f);
-        AvailableRoot[1].AddChange(BaseVariable.BaseWaterStorage, 5);
+        AvailableStem[1].AddChange(BaseVariable.BaseWaterStorage, 5);
         AvailableStem[1].AddChange(BaseVariable.StemSecondaryPhase, 1);
 
         AvailableStem.Add(new(5, "sm3", "Stem Upgrade", "Just better"));
         AvailableStem[2].AddChange(BaseVariable.BaseSunSupply, 0.5f);
-        AvailableRoot[2].AddChange(BaseVariable.BaseWaterStorage, 5);
+        AvailableStem[2].AddChange(BaseVariable.BaseWaterStorage, 5);
         AvailableStem[2].AddChange(BaseVariable.StemSecondaryPhase, 1);
 
         AvailableStem.Add(new(5, "sm4", "Stem Upgrade", "Just better"));
         AvailableStem[3].AddChange(BaseVariable.BaseSunSupply, 0.5f);
-        AvailableRoot[3].AddChange(BaseVariable.BaseWaterStorage, 5);
+        AvailableStem[3].AddChange(BaseVariable.BaseWaterStorage, 5);
         AvailableStem[3].AddChange(BaseVariable.StemSecondaryPhase, 1);
     }
 
     public void AddLeaves() //leaves also store water, so i add water storage here as well
     {
-        AvailableStem.Add(new(5, "sl1", "Leaf Upgrade", "Just better"));
-        AvailableStem[0].AddChange(BaseVariable.BaseSunSupply, 0.5f);
-        AvailableRoot[0].AddChange(BaseVariable.BaseWaterStorage, 5);
-        AvailableStem[0].AddChange(BaseVariable.LeafSecondaryPhase, 1);
+        AvailableLeaves.Add(new(5, "sl1", "Leaf Upgrade", "Just better"));
+        AvailableLeaves[0].AddChange(BaseVariable.BaseSunSupply, 0.5f);
+        AvailableLeaves[0].AddChange(BaseVariable.BaseWaterStorage, 5);
+        AvailableLeaves[0].AddChange(BaseVariable.LeafSecondaryPhase, 1);
 
-        AvailableStem.Add(new(5, "sl2", "Leaf Upgrade", "Just better"));
-        AvailableStem[1].AddChange(BaseVariable.BaseSunSupply, 0.5f);
-        AvailableRoot[1].AddChange(BaseVariable.BaseWaterStorage, 5);
-        AvailableStem[1].AddChange(BaseVariable.LeafSecondaryPhase, 1);
+        AvailableLeaves.Add(new(5, "sl2", "Leaf Upgrade", "Just better"));
+        AvailableLeaves[1].AddChange(BaseVariable.BaseSunSupply, 0.5f);
+        AvailableLeaves[1].AddChange(BaseVariable.BaseWaterStorage, 5);
+        AvailableLeaves[1].AddChange(BaseVariable.LeafSecondaryPhase, 1);
 
-        AvailableStem.Add(new(5, "sl3", "Leaf Upgrade", "Just better"));
-        AvailableStem[2].AddChange(BaseVariable.BaseSunSupply, 0.5f);
-        AvailableRoot[2].AddChange(BaseVariable.BaseWaterStorage, 5);
-        AvailableStem[2].AddChange(BaseVariable.LeafSecondaryPhase, 1);
+        AvailableLeaves.Add(new(5, "sl3", "Leaf Upgrade", "Just better"));
+        AvailableLeaves[2].AddChange(BaseVariable.BaseSunSupply, 0.5f);
+        AvailableLeaves[2].AddChange(BaseVariable.BaseWaterStorage, 5);
+        AvailableLeaves[2].AddChange(BaseVariable.LeafSecondaryPhase, 1);
 
-        AvailableStem.Add(new(5, "sl4", "Leaf Upgrade", "Just better"));
-        AvailableStem[3].AddChange(BaseVariable.BaseSunSupply, 0.5f);
-        AvailableRoot[3].AddChange(BaseVariable.BaseWaterStorage, 5);
-        AvailableStem[3].AddChange(BaseVariable.LeafSecondaryPhase, 1);
+        AvailableLeaves.Add(new(5, "sl4", "Leaf Upgrade", "Just better"));
+        AvailableLeaves[3].AddChange(BaseVariable.BaseSunSupply, 0.5f);
+        AvailableLeaves[3].AddChange(BaseVariable.BaseWaterStorage, 5);
+        AvailableLeaves[3].AddChange(BaseVariable.LeafSecondaryPhase, 1);
     }
 }

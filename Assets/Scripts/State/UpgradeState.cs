@@ -24,8 +24,8 @@ public partial class UpgradeState : ScriptableObject
 		AvailableFlowers = new();
 		AddRoot();//calling method to add all stem upgrades <-- root or stem?
 		AddStem();//calling method to add all stem upgrades
-        AddLeaves();//calling method to add all leaf upgrades
-    }
+		AddLeaves();//calling method to add all leaf upgrades
+	}
 
 	private void ApplyBaseChange(GeneralState state, (BaseVariable variable, float value) mod)
 	{
@@ -116,6 +116,9 @@ public partial class UpgradeState : ScriptableObject
 		state.NutrientLevel -= upg.Cost;
 		Unlocked.Add(upg.Codename);
 		AvailableStem.Remove(upg);
+		AvailableFlowers.Remove(upg);
+		AvailableLeaves.Remove(upg);
+		AvailableRoot.Remove(upg);
 		foreach(var mod in upg.BaseChanges)
 		{
 			ApplyBaseChange(state, mod);

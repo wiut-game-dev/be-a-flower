@@ -1,5 +1,12 @@
+using UnityEngine;
+
 public class City : Inhabitat
 {
+	public City()
+	{
+		Background = Resources.Load<Sprite>("City");
+	}
+
 	public override void SetVariables(GeneralState plantStats)
 	{
 		plantStats.Modificators.Add(new(ShareVariable.WaterSupply, -0.5f));
