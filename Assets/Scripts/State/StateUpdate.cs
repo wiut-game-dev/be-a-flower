@@ -75,9 +75,15 @@ public class StateUpdate : MonoBehaviour
 	public void CheckLiveness()
 	{
 		if(State.WaterLevel / State.WaterStorage < 0.1f)
+		{
 			State.Alive = false;
+			State.DeathCause = "Dehydration";
+		}
 		if(State.NutrientLevel < 0.1f)
+		{
 			State.Alive = false;
+			State.DeathCause = "Starvation";
+		}
 		if(!State.Alive)
 			Destroy(gameObject);
 	}

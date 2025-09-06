@@ -8,6 +8,7 @@ using UnityEngine;
 public class GeneralState : ScriptableObject
 {
 	public bool Alive;
+	public string DeathCause;
 	//storage and supply of water
 	//base is how much plant itself gives, and then it is multiplied by modificators
 	public float BaseWaterSupply = 1f;

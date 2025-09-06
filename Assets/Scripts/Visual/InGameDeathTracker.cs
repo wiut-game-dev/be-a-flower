@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class DeathTracker : MonoBehaviour
+public class InGameDeathTracker : MonoBehaviour
 {
 	public GameObject DeathImage;
 	public GeneralState State;
@@ -8,7 +9,7 @@ public class DeathTracker : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(!State.Alive && !DeathImage.activeSelf)
-			DeathImage.SetActive(true);
+		if(!State.Alive)
+			SceneManager.LoadScene("EndScene");
 	}
 }
