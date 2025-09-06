@@ -1,3 +1,5 @@
+using System;
+
 using TMPro;
 
 using UnityEngine;
@@ -13,6 +15,9 @@ public class UpgradeShower : MonoBehaviour
 	public UpgradeState upgradeState;
 	public GeneralState generalState;
 
+	public DateTime MessageBoxModified;
+	public bool MessageBoxNotEmpty => Message.text != string.Empty;
+
 	private void Start()
 	{
 		//firstly, show all possible upgrades of aspects
@@ -24,6 +29,11 @@ public class UpgradeShower : MonoBehaviour
 
 	private void Update()
 	{
+		if(DateTime.Now - MessageBoxModified > TimeSpan.FromSeconds(3) && Message.text != "")
+		{
+			Debug.Log($"Message box from {MessageBoxModified} cleared at {DateTime.Now}");
+			Message.text = string.Empty;
+		}
 		//when according key is pressed, upgrade aspect
 		if(Input.GetKeyUp(KeyCode.S))
 		{
@@ -84,67 +94,49 @@ public class UpgradeShower : MonoBehaviour
 			Flower.text = "No upgrades avaialable";
 	}
 
-	public void UpgradeStem()
+	public void ShowOutcome(bool outcome)
 	{
-		//try to upgrade stem
-		if(upgradeState.UpgradeNext(generalState, Aspect.Stem))
+		if(outcome)
 		{
-			//if yes, say so and update available upgrade
-			ShowAvailableStem();
 			Message.text = "Successful update";
+			MessageBoxModified = DateTime.Now;
 		}
 		else
 		{
-			//if no, say so
 			Message.text = "Can not upgrade";
+			MessageBoxModified = DateTime.Now;
 		}
+	}
+
+	public void UpgradeStem()
+	{
+		bool canUpgrade = upgradeState.UpgradeNext(generalState, Aspect.Stem);
+		if(canUpgrade)
+			ShowAvailableStem();
+		ShowOutcome(canUpgrade);
 	}
 
 	public void UpgradeRoot()
 	{
-		//try to upgrade root
-		if(upgradeState.UpgradeNext(generalState, Aspect.Root))
-		{
-			//if yes, say so and update available upgrade
+		bool canUpgrade = upgradeState.UpgradeNext(generalState, Aspect.Root);
+		if(canUpgrade)
 			ShowAvailableRoot();
-			Message.text = "Successful update";
-		}
-		else
-		{
-			//if no, say so
-			Message.text = "Can not upgrade";
-		}
+		ShowOutcome(canUpgrade);
 	}
 
 	public void UpgradeLeaf()
 	{
-		//try to upgrade leaf
-		if(upgradeState.UpgradeNext(generalState, Aspect.Leaves))
-		{
-			//if yes, say so and update available upgrade
+		bool canUpgrade = upgradeState.UpgradeNext(generalState, Aspect.Leaves);
+		if(canUpgrade)
 			ShowAvailableLeaf();
-			Message.text = "Successful update";
-		}
-		else
-		{
-			//if no, say so
-			Message.text = "Can not upgrade";
-		}
+		ShowOutcome(canUpgrade);
 	}
 
 	public void UpgradeFlower()
 	{
-		//try to upgrade flower
-		if(upgradeState.UpgradeNext(generalState, Aspect.Flowers))
-		{
-			//if yes, say so and update available upgrade
+		bool canUpgrade = upgradeState.UpgradeNext(generalState, Aspect.Flowers);
+		if(canUpgrade)
 			ShowAvailableFlower();
-			Message.text = "Successful update";
-		}
-		else
-		{
-			//if no, say so
-			Message.text = "Can not upgrade";
-		}
+		ShowOutcome(canUpgrade);
 	}
 }
