@@ -62,7 +62,7 @@ public class UpgradeShower : MonoBehaviour
 		//retrieve next available stem upgrade and show it on textbox
 		Upgrade upg = upgradeState.Next(Aspect.Stem);
 		if(upg is not null)
-			Stem.text = $"{upg.Cost}|{upg.Name} - {upg.Description}";
+			Stem.text = $"{upg.Cost}n|{upg.Name} - {upg.Description}";
 		else
 			Stem.text = "No upgrades avaialable";
 	}
@@ -71,7 +71,7 @@ public class UpgradeShower : MonoBehaviour
 	{
 		Upgrade upg = upgradeState.Next(Aspect.Root);
 		if(upg is not null)
-			Root.text = $"{upg.Cost}|{upg.Name} - {upg.Description}";
+			Root.text = $"{upg.Cost}n|{upg.Name} - {upg.Description}";
 		else
 			Root.text = "No upgrades avaialable";
 	}
@@ -80,7 +80,7 @@ public class UpgradeShower : MonoBehaviour
 	{
 		Upgrade upg = upgradeState.Next(Aspect.Leaves);
 		if(upg is not null)
-			Leaf.text = $"{upg.Cost}|{upg.Name} - {upg.Description}";
+			Leaf.text = $"{upg.Cost}n|{upg.Name} - {upg.Description}";
 		else
 			Leaf.text = "No upgrades avaialable";
 	}
@@ -89,7 +89,7 @@ public class UpgradeShower : MonoBehaviour
 	{
 		Upgrade upg = upgradeState.Next(Aspect.Flowers);
 		if(upg is not null)
-			Flower.text = $"{upg.Cost}|{upg.Name} - {upg.Description}";
+			Flower.text = $"{upg.Cost}n|{upg.Name} - {upg.Description}";
 		else
 			Flower.text = "No upgrades avaialable";
 	}
