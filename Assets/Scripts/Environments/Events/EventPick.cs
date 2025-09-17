@@ -30,9 +30,7 @@ public class EventPick : MonoBehaviour
 		{
 			timer = 0;
 			Event ev = events[Random.Range(0, events.Count)];
-			Modificator outcome = ev.GetOutcome(GeneralState);
-			GeneralState.Modificators.Add(outcome);
-			SetDelay();
+			//do sth
 		}
 	}
 }

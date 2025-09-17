@@ -14,6 +14,8 @@ public enum BaseVariable
 	StemPrimaryPhase,
 	StemSecondaryPhase,
 	RootPrimaryPhase,
-	RootSecondaryPhase
+	RootSecondaryPhase,
+	WaterLevel,
+	NutrientLevel,
 }
 

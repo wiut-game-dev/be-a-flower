@@ -2,5 +2,5 @@
 
 public abstract class Event
 {
-	public abstract Modificator GetOutcome(GeneralState state);
+	public abstract Outcome GetOutcome(GeneralState state);
 }
