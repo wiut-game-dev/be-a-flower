@@ -70,6 +70,12 @@ public partial class UpgradeState : ScriptableObject
 			case BaseVariable.StemSecondaryPhase:
 				state.StemSecondaryPhase += (int)mod.value;
 				break;
+			case BaseVariable.WaterLevel:
+				state.WaterLevel += (int)mod.value;
+				break;
+			case BaseVariable.NutrientLevel:
+				state.NutrientLevel += (int)mod.value;
+				break;
 		}
 	}
 
