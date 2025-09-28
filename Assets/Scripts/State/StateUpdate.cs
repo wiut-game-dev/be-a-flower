@@ -84,7 +84,7 @@ public class StateUpdate : MonoBehaviour
 			State.Alive = false;
 			State.DeathCause = "Starvation";
 		}
-		if(!State.Alive)
+		if(!State.Alive && !State.HoldOn)
 			Destroy(gameObject);
 	}
 

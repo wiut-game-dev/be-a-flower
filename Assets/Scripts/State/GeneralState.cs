@@ -46,6 +46,8 @@ public class GeneralState : ScriptableObject
 	//this should represent chance of getting disease from pollution
 	public float Pollution;
 
+	public bool HoldOn;
+
 	public List<Modificator> Modificators = new();
 
 	public void SetInitial()
@@ -67,6 +69,8 @@ public class GeneralState : ScriptableObject
 		StemSecondaryPhase = 1;
 		RootPrimaryPhase = 1;
 		RootSecondaryPhase = 1;
+
+		HoldOn = false;
 	}
 }
 

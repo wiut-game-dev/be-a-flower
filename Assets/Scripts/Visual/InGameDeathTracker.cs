@@ -9,7 +9,7 @@ public class InGameDeathTracker : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(!State.Alive)
+		if(!State.Alive&&!State.HoldOn)
 			SceneManager.LoadScene("EndScene");
 	}
 }

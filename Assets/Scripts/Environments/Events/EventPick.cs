@@ -2,14 +2,18 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class EventPick : MonoBehaviour
+public partial class EventPick : MonoBehaviour
 {
 	public float minDelay = 10f;
-	public float maxDelay = 50f;
+	public float maxDelay = 11f;
 	public float delay;
 	public float timer;
 
+	public GameObject Message;
+
 	public GeneralState state;
+
+	public Canvas Ui;
 
 	public List<Event> events;
 
@@ -21,6 +25,8 @@ public class EventPick : MonoBehaviour
 	private void Start()
 	{
 		SetDelay();
+		events = new List<Event>();
+		AddEvents();
 	}
 
 	private void Update()
@@ -32,7 +38,11 @@ public class EventPick : MonoBehaviour
 			Event ev = events[Random.Range(0, events.Count)];
 			Outcome outcome = ev.GetOutcome(state);
 			if(outcome.Kill)
+			{
+				state.HoldOn = true;
 				state.Alive = false;
+				state.DeathCause = outcome.EventName;
+			}
 			else
 			{
 				state.Modificators.AddRange(outcome.Modificators);
@@ -41,8 +51,16 @@ public class EventPick : MonoBehaviour
 					ApplyBaseChange(state, pen);
 				}
 			}
+			ShowMessage(outcome);
 			SetDelay();
 		}
+	}
+
+	private void ShowMessage(Outcome outcome)
+	{
+		var message = GameObject.Instantiate(Message, Ui.transform);
+		var box = message.GetComponent<MessageBox>();
+		box.SetText(outcome.EventName, outcome.Message);
 	}
 
 	private void ApplyBaseChange(GeneralState state, (BaseVariable variable, float value) mod)
